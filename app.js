@@ -2,32 +2,23 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-
-// simple handle HTTP '/'endpoint with response.
 app.get('/', (req, res) => {
-    res.send('<h1> Express Demo App</h1><p>');
-});
+    res.send('<h1>Express Demo App</h1> <h4>Message: Success</h4> <p>Version 1.1</p>');
+})
 
-// response to /products endpoint
 app.get('/products', (req, res) => {
     res.send([
         {
             productId: '101',
-            price: 110.80
+            price: 100
         },
         {
             productId: '102',
-            price: 51.25
+            price: 150
         }
     ])
-});
+})
 
-
-// setup the port to listen
 app.listen(port, () => {
-    console.log(`nodejs-express-on-aws2-ec2 app       listen to port ${port}`)
-});
-
-
-
-// I made some changes ................
+    console.log(`Demo app is up and listening to port: ${port}`);
+})
